@@ -1,0 +1,6 @@
+sudo add-apt-repository ppa:linuxuprising/java
+
+sudo apt install -y oracle-java16-installer
+
+java -version
+javac -version

@@ -1,0 +1,19 @@
+1° - Baixar o pacote .tar.gz
+2° - Mover para o diretório opt --> sudo mv spring-tool...tar.gz /opt
+3° - Acessar o diretório opt --> cd /opt
+4° - Extrair o .tar.gz --> sudo tar zxvf spring-tool...tar.gz
+5° - Acessar o diretório da STS --> cd sts-...RELEASE
+5.1° - [OPCIONAL] subir a STS pela linha de comando --> sudo ./SpringToolSuite4
+6° - Criar um arquivo (atalho) no diretório dos links simbólicos --> sudo vi /usr/share/applications/stsLauncher.desktop
+
+7° Conteúdo do arquivo 
+
+[Desktop Entry]
+Name=Spring Tool Suite
+Comment=Spring Tool Suite 4.7.1
+Exec=/opt/sts-4.7.1.RELEASE/STS
+Icon=/opt/sts-4.7.1.RELEASE/icon.xpm
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=Development;IDE;Java;
