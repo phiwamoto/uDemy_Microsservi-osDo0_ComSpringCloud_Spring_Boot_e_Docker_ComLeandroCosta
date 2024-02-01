@@ -163,7 +163,8 @@ Seção 5: Seção de Nivelamento - REST na Prática com Spring (Framework) Boot
    - Os Verbos HTTP POST, PUT e DELETE (30/01/2024)
    - Criando a Base de Dados e Definindo as Propriedades de Conexão (30/01/2024 e 31/01/2024)
       - Criado o banco de dados com o nome: rest_with_spring_boot_erudio
-	  
+   - Implementando a Entidade Person e o Repositório (31/01/2024)
+   - Substituindo os Mocks do Service pelo Acesso ao Repositório (31/01/2024)
    
 
 
