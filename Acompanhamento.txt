@@ -165,9 +165,35 @@ Seção 5: Seção de Nivelamento - REST na Prática com Spring (Framework) Boot
       - Criado o banco de dados com o nome: rest_with_spring_boot_erudio
    - Implementando a Entidade Person e o Repositório (31/01/2024)
    - Substituindo os Mocks do Service pelo Acesso ao Repositório (31/01/2024)
-   
-
-
+   - Executando a Aplicação e Testando os Endpoints (04/02/2024)
+      - http://localhost:8080/person (GET)
+	  - http://localhost:8080/person/1 (GET)
+      - http://localhost:8080/person (POST)
+		{
+			"firstName": "Ayrton",
+			"lastName": "Senna",
+			"address": "São Paulo",
+			"gender": "Male"
+		}   
+		
+		{
+			"firstName": "Leonardo",
+			"lastName": "da Vinci",
+			"address": "Anchiano - Italy",
+			"gender": "Male"
+		}
+      - http://localhost:8080/person (PUT)
+			{
+				"id": 2,
+				"firstName": "Leonardo",
+				"lastName": "da Vinci",
+				"address": "Anchiano - Italy",
+				"gender": "Male"
+			}	    
+      - http://localhost:8080/person/3 (DELETE)
+   - Refactoring do Controller de Pessoas (04/02/2024)
+   - [UPDATES] Diferenças entre o Spring Boot 3 Milestone e Spring Boot 3.0.1 (04/02/2024)
+   - [UPDATES] Removendo Warnings após o Upgrade p. Spring Boot 3.2.0 e Java 21 (04/02/2024)
 
 
 
