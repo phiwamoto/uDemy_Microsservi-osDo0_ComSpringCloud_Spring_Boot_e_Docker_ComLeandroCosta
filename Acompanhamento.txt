@@ -194,8 +194,12 @@ Seção 5: Seção de Nivelamento - REST na Prática com Spring (Framework) Boot
    - Refactoring do Controller de Pessoas (04/02/2024)
    - [UPDATES] Diferenças entre o Spring Boot 3 Milestone e Spring Boot 3.0.1 (04/02/2024)
    - [UPDATES] Removendo Warnings após o Upgrade p. Spring Boot 3.2.0 e Java 21 (04/02/2024)
+   - [OPCIONAL] Como um DEV Proativo Soluciona suas Dúvidas no StackOverFlow (04/02/2024)
+   - [OPCIONAL] Como um DEV Proativo Soluciona suas Dúvidas no Google (05/02/2024)
+   - Como um DEV Proativo Soluciona suas Dúvidas no ChatGPT (05/02/2024)
 
-
+Seção 6: Rápida Introdução aos Microsserviços
+   - Apresentação da Seção - Rápida Introdução aos Microsserviços (05/02/2024)
 
 
 
