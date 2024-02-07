@@ -200,15 +200,21 @@ Seção 5: Seção de Nivelamento - REST na Prática com Spring (Framework) Boot
 
 Seção 6: Rápida Introdução aos Microsserviços
    - Apresentação da Seção - Rápida Introdução aos Microsserviços (05/02/2024)
+      - O que são micro serviços;
+	  - Monolitico x Micro serviços
+   - O que são Microsserviços? (05/02/2024)
+   - O que os Microsserviços não são e por que eles são uma "Febre"? (06/02/2024)
+   - Entendendo como as Aplicações Monolíticas Funcionam (06/02/2024)
+   - Os Desafios das Aplicações Monolíticas (06/02/2024)
+   - Prós e Contras das Aplicações Monolíticas (06/02/2024)
+   - Entendendo como Funciona uma Arquitetura de Microsserviços (06/02/2024)
+   - As Vantagens e os Desafios Relacionados aos Microsserviços (06/02/2024)
+   - Como Quebrar uma Aplicação Monolítica em Microsserviços (06/02/2024)
+   - Diferenças entre Microsserviços e SOA (06/02/2024)
+   - Conclusão da Seção - Rápida Introdução aos Microsserviços
 
 
-
-
-
-
-
-
-
+Seção 7: Spring Cloud Configuration (Archaius) e Spring Boot Actuator
 
 
 
