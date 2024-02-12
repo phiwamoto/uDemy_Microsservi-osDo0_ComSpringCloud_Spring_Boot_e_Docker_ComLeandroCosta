@@ -253,7 +253,8 @@ Seção 7: Spring Cloud Configuration (Archaius) e Spring Boot Actuator
       - http://localhost:8888/application-qa/default
       - http://localhost:8888/application-perf/default
 	  - http://localhost:8888/application-prod/default
-      
+   - Integrando o Spring Cloud Config Server com o Github (11/02/2024)
+   
 
 
 
