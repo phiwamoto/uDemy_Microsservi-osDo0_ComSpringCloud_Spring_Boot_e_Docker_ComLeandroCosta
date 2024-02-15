@@ -254,8 +254,15 @@ Seção 7: Spring Cloud Configuration (Archaius) e Spring Boot Actuator
       - http://localhost:8888/application-perf/default
 	  - http://localhost:8888/application-prod/default
    - Integrando o Spring Cloud Config Server com o Github (11/02/2024)
-   
-
+      - Tivemos que deixar publico, pois privado mesmo com usuario e password não estava autenticando
+      - http://localhost:8888/greeting-service/default
+	  - http://localhost:8888/greeting-service/dev
+	  - http://localhost:8888/greeting-service/perf
+	  - http://localhost:8888/greeting-service/qa
+	  - http://localhost:8888/greeting-service/prod
+   - Integrando o Spring Cloud Config Server com o Github (11/02/2024)
+   - Integrando o Greeting Service com o Spring Cloud Config Server (13/02/2024 e 14/02/2023)
+      - netstat -o -n -a | findstr 8080 >>> mostrar serviço porta Windows
 
 
 

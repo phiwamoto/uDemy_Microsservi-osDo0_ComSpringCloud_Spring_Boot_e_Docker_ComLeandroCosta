@@ -12,6 +12,16 @@ public class GreetingConfiguration {
 	
 	
 	public GreetingConfiguration() {}
+	
+//	
+//
+//
+//	public GreetingConfiguration(String greeting, String defaultValue) {
+//		this.greeting = greeting;
+//		this.defaultValue = defaultValue;
+//	}
+
+
 
 
 	public String getGreeting() {

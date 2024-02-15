@@ -3,6 +3,20 @@ server:
 spring:
   application:
     name: erudio-config-server
-  profiles:
-    active:
-    - native
+#  profiles:
+#    active:
+#    - native
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/leandrocgsi/erudio-config-server
+          #uri: https://github.com/phiwamoto/uDemy_Microsservico_ComSpringCloud_Spring_Boot_e_Docker_ComLeandroCosta
+          #username: usser
+          #password: password
+          default-label: main
+          search-paths:
+          - 'greeting-service*'
+logging:
+  level:
+    web: DEBUG
