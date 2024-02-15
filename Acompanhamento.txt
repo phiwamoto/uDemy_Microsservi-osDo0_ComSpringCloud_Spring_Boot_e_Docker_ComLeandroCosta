@@ -261,9 +261,11 @@ Seção 7: Spring Cloud Configuration (Archaius) e Spring Boot Actuator
 	  - http://localhost:8888/greeting-service/qa
 	  - http://localhost:8888/greeting-service/prod
    - Integrando o Spring Cloud Config Server com o Github (11/02/2024)
-   - Integrando o Greeting Service com o Spring Cloud Config Server (13/02/2024 e 14/02/2023)
+   - Integrando o Greeting Service com o Spring Cloud Config Server (13/02/2024 e 14/02/2024)
       - netstat -o -n -a | findstr 8080 >>> mostrar serviço porta Windows
-
+   - Atualizando as Configurações sem Interromper o Microsserviço (14/02/2024)
+      - @RefreshScope
+   - Conclusão da Seção - Spring Cloud Configuration e Spring Boot Actuator (14/02/2024)
 
 
 
