@@ -268,6 +268,14 @@ Seção 7: Spring Cloud Configuration (Archaius) e Spring Boot Actuator
    - Conclusão da Seção - Spring Cloud Configuration e Spring Boot Actuator (14/02/2024)
 
 
+Seção 8: Criando e Conectando Microsserviços com Feign
+
+   - Apresentação da Seção - Criando e Conectando Microsserviços com Feign (14/02/2024)
+   - Como Serão os Nossos Microsserviços (14/02/2024)
+   - Criando o Microsserviço Cambio Service (14/02/2024)
+      - Criado o projeto: cambio-service
+	     - Porta: 8000
+      - http://localhost:8000/actuator
 
 
 
