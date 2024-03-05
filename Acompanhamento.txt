@@ -277,7 +277,7 @@ Seção 8: Criando e Conectando Microsserviços com Feign
 	     - Porta: 8000
       - http://localhost:8000/actuator
    - Criando o Microsserviço Cambio Service (14/02/2024)
-   - Retornando Mocks e Testando o Cambio Service (14/02/2024)
+   - Retornando Mocks e Testando o Cambio Service (04/03/2024)
       - http://localhost:8000/cambio-service/5/USD/BRL
 			{
 			"id": 1,
@@ -287,8 +287,28 @@ Seção 8: Criando e Conectando Microsserviços com Feign
 			"conversionValue": 1,
 			"environment": "PORT 8000"
 			}
+   - Recuperando a Porta da Instância em Execução (04/03/2024)
+      - Duplicar a subida de projeto "cambio-service" e dentro de arguments e VM arguments incluir:
+	     >>> -Dserver.port=8001
+      - http://localhost:8000/cambio-service/5/USD/BRL
+			{
+			"id": 1,
+			"from": "USD",
+			"to": "BRL",
+			"conversionFactor": 1,
+			"conversionValue": 1,
+			"environment": "8000"
+			}	  
 
-
+      - http://localhost:8001/cambio-service/5/USD/BRL	  
+			{
+			"id": 1,
+			"from": "USD",
+			"to": "BRL",
+			"conversionFactor": 1,
+			"conversionValue": 1,
+			"environment": "8001"
+			}
 
 
 
