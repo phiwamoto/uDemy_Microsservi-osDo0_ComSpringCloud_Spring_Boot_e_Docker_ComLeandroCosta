@@ -276,6 +276,17 @@ Seção 8: Criando e Conectando Microsserviços com Feign
       - Criado o projeto: cambio-service
 	     - Porta: 8000
       - http://localhost:8000/actuator
+   - Criando o Microsserviço Cambio Service (14/02/2024)
+   - Retornando Mocks e Testando o Cambio Service (14/02/2024)
+      - http://localhost:8000/cambio-service/5/USD/BRL
+			{
+			"id": 1,
+			"from": "USD",
+			"to": "BRL",
+			"conversionFactor": 1,
+			"conversionValue": 1,
+			"environment": "PORT 8000"
+			}
 
 
 
