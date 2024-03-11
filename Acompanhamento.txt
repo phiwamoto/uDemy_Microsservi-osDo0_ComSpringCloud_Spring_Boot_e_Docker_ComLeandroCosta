@@ -331,7 +331,10 @@ Seção 8: Criando e Conectando Microsserviços com Feign
 			<groupId>org.flywaydb</groupId>
 			<artifactId>flyway-core</artifactId>
 		</dependency>		
-	  
+
+   - Adicionando o Flyway ao Microsserviço (11/03/2024)
+   - Ajustando as Configurações do JPA no application.yml (11/03/2024)
+   - Adicionando as Annotations do JPA e Integrando o Serviço ao Banco de Dados (11/03/2024)
 
 
 
