@@ -334,7 +334,44 @@ Seção 8: Criando e Conectando Microsserviços com Feign
 
    - Adicionando o Flyway ao Microsserviço (11/03/2024)
    - Ajustando as Configurações do JPA no application.yml (11/03/2024)
-   - Adicionando as Annotations do JPA e Integrando o Serviço ao Banco de Dados (11/03/2024)
+   - Adicionando as Annotations do JPA e Integrando o Serviço ao Banco de Dados (11/03/2024 e 25/03/2024)
+      - http://localhost:8000/cambio-service/5/USD/BRL
+			{
+			"id": 1,
+			"from": "USD",
+			"to": "BRL",
+			"conversionFactor": 5.73,
+			"conversionValue": 28.65,
+			"environment": "8000"
+			}
+      - http://localhost:8000/cambio-service/8/USD/BRL
+			{
+			"id": 1,
+			"from": "USD",
+			"to": "BRL",
+			"conversionFactor": 5.73,
+			"conversionValue": 45.84,
+			"environment": "8000"
+			}
+      - http://localhost:8000/cambio-service/8/USD/ARS
+			{
+			"id": 4,
+			"from": "USD",
+			"to": "ARS",
+			"conversionFactor": 92.56,
+			"conversionValue": 740.48,
+			"environment": "8000"
+			}
+      - http://localhost:8000/cambio-service/8/USD/MXN
+			{
+			"id": 7,
+			"from": "USD",
+			"to": "MXN",
+			"conversionFactor": 20.15,
+			"conversionValue": 161.2,
+			"environment": "8000"
+			}	  
+
 
 
 
