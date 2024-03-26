@@ -371,7 +371,25 @@ Seção 8: Criando e Conectando Microsserviços com Feign
 			"conversionValue": 161.2,
 			"environment": "8000"
 			}	  
-
+	  
+   - Criando o Microsserviço Book Service (25/03/2024)
+      - http://localhost:8100/actuator
+			{
+			"_links": {
+			"self": {
+			"href": "http://localhost:8100/actuator",
+			"templated": false
+			},
+			"health-path": {
+			"href": "http://localhost:8100/actuator/health/{*path}",
+			"templated": true
+			},
+			"health": {
+			"href": "http://localhost:8100/actuator/health",
+			"templated": false
+			}
+			}
+			}
 
 
 
