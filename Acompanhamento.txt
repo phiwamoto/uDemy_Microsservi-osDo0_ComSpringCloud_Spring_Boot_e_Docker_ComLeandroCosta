@@ -391,6 +391,17 @@ Seção 8: Criando e Conectando Microsserviços com Feign
 			}
 			}
 
+   - Retornando Mocks e Testando o Book Service (25/03/2024)
+      - http://localhost:8100/book-service/5/BRL
+			{
+			"id": 1,
+			"author": "Nigel Poulton",
+			"lauchDate": "2024-03-26T03:30:45.950+00:00",
+			"price": 13.7,
+			"title": "Docker Deep Dive",
+			"currency": "BRL",
+			"environment": "8100"
+			}
 
 
 
