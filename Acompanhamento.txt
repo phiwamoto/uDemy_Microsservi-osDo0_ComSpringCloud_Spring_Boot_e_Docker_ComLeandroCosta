@@ -402,6 +402,8 @@ Seção 8: Criando e Conectando Microsserviços com Feign
 			"currency": "BRL",
 			"environment": "8100"
 			}
+   - Adicionando o Flyway e as Dependências do Spring Data JPA ao Book Service (28/03/2024)
+      - Adicionado no pom.xml e scripts
 
 
 
