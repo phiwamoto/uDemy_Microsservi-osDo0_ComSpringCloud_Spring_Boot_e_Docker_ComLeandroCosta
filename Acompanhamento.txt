@@ -406,6 +406,25 @@ Seção 8: Criando e Conectando Microsserviços com Feign
       - Adicionado no pom.xml e scripts
 
 
+   - Integrando o Book Service ao Banco de Dados com JPA e Spring Data (10/06/2024 e 14/06/2024)
+		2024-06-10T14:11:10.016-03:00  INFO 8108 --- [book-service] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table `book_service`.`flyway_schema_history` ...
+		2024-06-10T14:11:10.178-03:00  INFO 8108 --- [book-service] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema `book_service`: << Empty Schema >>
+		2024-06-10T14:11:10.186-03:00  INFO 8108 --- [book-service] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema `book_service` to version "1 - Create Table Books"
+		2024-06-10T14:11:10.226-03:00  WARN 8108 --- [book-service] [           main] o.f.c.i.s.DefaultSqlScriptExecutor       : DB: Integer display width is deprecated and will be removed in a future release. (SQL State: HY000 - Error Code: 1681)
+		2024-06-10T14:11:10.255-03:00  INFO 8108 --- [book-service] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema `book_service` to version "2 - Insert Data In Books"
+		2024-06-10T14:11:10.298-03:00  INFO 8108 --- [book-service] [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema `book_service`, now at version v2 (execution time 00:00.046s)
+		2024-06-10T14:11:10.463-03:00  INFO 8108 --- [book-service] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]   
+		
+      - http://localhost:8100/book-service/5/MXN
+			{
+			"id": 5,
+			"author": "Steve McConnell",
+			"price": 10.14,
+			"title": "Code complete",
+			"currency": null,
+			"environment": "8100",
+			"lauchDate": "2017-11-07"
+			}
 
 
 

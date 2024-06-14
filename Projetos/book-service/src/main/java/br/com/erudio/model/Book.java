@@ -4,16 +4,44 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
+import jakarta.persistence.Transient;
+
+@Entity(name = "book")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Book implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	@Column(name = "author", nullable = false, length = 180)
 	private String author;
-	private Date lauchDate;
+	
+	@Column(name = "launch_date", nullable = false)
+	@Temporal(TemporalType.DATE)
+	private Date launchDate;
+	
+	@Column(nullable = false)
 	private Double price;
+	
+	@Column(nullable = false, length = 250)
 	private String title;
+	
+	@Transient
 	private String currency;
+	
+	@Transient
 	private String environment;
 	
 	
@@ -21,11 +49,11 @@ public class Book implements Serializable {
 		
 	}
 
-	public Book(Long id, String author, String title, Date lauchDate, Double price, String currency,
+	public Book(Long id, String author, String title, Date launchDate, Double price, String currency,
 			String environment) {
 		this.id = id;
 		this.author = author;
-		this.lauchDate = lauchDate;
+		this.launchDate = launchDate;
 		this.price = price;
 		this.title = title;
 		this.currency = currency;
@@ -49,11 +77,11 @@ public class Book implements Serializable {
 	}
 
 	public Date getLauchDate() {
-		return lauchDate;
+		return launchDate;
 	}
 
-	public void setLauchDate(Date lauchDate) {
-		this.lauchDate = lauchDate;
+	public void setLauchDate(Date launchDate) {
+		this.launchDate = launchDate;
 	}
 
 	public Double getPrice() {
@@ -90,7 +118,7 @@ public class Book implements Serializable {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(author, currency, environment, id, lauchDate, price, title);
+		return Objects.hash(author, currency, environment, id, launchDate, price, title);
 	}
 
 	@Override
@@ -104,7 +132,12 @@ public class Book implements Serializable {
 		Book other = (Book) obj;
 		return Objects.equals(author, other.author) && Objects.equals(currency, other.currency)
 				&& Objects.equals(environment, other.environment) && Objects.equals(id, other.id)
-				&& Objects.equals(lauchDate, other.lauchDate) && Objects.equals(price, other.price)
+				&& Objects.equals(launchDate, other.launchDate) && Objects.equals(price, other.price)
 				&& Objects.equals(title, other.title);
 	}
+	
+	
+	// @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+	// https://stackoverflow.com/questions/72464121/no-serializer-found-for-class-no-properties-discovered-to-create-beanserializer
+	// com.fasterxml.jackson.databind.exc.InvalidDefinitionException: No serializer found for class org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS) (through reference chain: br.com.erudio.model.Book$HibernateProxy$iRv8e3LE["hibernateLazyInitializer"])	
 }
