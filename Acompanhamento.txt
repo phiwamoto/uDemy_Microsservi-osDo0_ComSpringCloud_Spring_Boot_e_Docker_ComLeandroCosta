@@ -498,6 +498,8 @@ Seção 8: Criando e Conectando Microsserviços com Feign
 
    - Conclusão da Seção - Criando e Conectando Microsserviços com Feign (14/06/2024)
    
+   - Apresentação da Seção - Service Discovery e Service Registry com Eureka (14/06/2024)
+   
 
 
 
