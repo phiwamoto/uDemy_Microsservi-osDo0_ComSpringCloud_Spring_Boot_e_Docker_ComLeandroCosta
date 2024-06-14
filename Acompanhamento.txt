@@ -460,7 +460,28 @@ Seção 8: Criando e Conectando Microsserviços com Feign
 			}			
 
 
-
+   - Consumindo o Endpoint de Cambio Service no Book Service (14/06/2024)
+      - Explicando que os 2 micrserviços estão prontos e efetuar ajustes finais
+	  
+	  - http://localhost:8100/book-service/1/BRL
+			{
+			"id": 1,
+			"author": "Michael C. Feathers",
+			"price": 49.11,
+			"title": "Working effectively with legacy code",
+			"environment": "8100",
+			"lauchDate": "2017-11-29"
+			}
+			
+      - http://localhost:8100/book-service/6/BRL
+			{
+			"id": 6,
+			"author": "Martin Fowler e Kent Beck",
+			"price": 88.13,
+			"title": "Refactoring",
+			"environment": "8100",
+			"lauchDate": "2017-11-07"
+			}	  
 
 
 
