@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import br.com.erudio.model.Book;
+import br.com.erudio.proxy.CambioProxy;
 import br.com.erudio.repository.BookRepository;
 import br.com.erudio.response.Cambio;
 
@@ -22,9 +23,34 @@ public class BookController {
 	private Environment environment;
 	
 	@Autowired
-	private BookRepository repository;	
-		
+	private BookRepository repository;
+
+	@Autowired
+	private CambioProxy proxy;	
+
 	
+	@GetMapping(value = "/{id}/{currency}")
+	public Book findBook(
+			@PathVariable("id") Long id,
+			@PathVariable("currency") String currency
+			) {
+		
+		var book = repository.getById(id);
+		if (book == null)
+			throw new RuntimeException("Book not Found"); 
+		
+		var cambio = proxy.getCambio(book.getPrice(), "USD", currency);
+				
+		var port = environment.getProperty("local.server.port");
+		book.setEnvironment(port + " FEIGN");
+		book.setPrice(cambio.getConversionValue());
+		
+		return book;
+	}
+	
+	
+/*
+
 	// http://localhost:8100/book-service/1/BRL
 	@GetMapping(value = "/{id}/{currency}")
 	public Book findBook(
@@ -50,5 +76,7 @@ public class BookController {
 		book.setPrice(cambio.getConversionValue());
 		
 		return book;
-	}
+	}	
+	
+*/
 }

@@ -484,8 +484,18 @@ Seção 8: Criando e Conectando Microsserviços com Feign
 			}	  
 
 
+   - Usando o Feign REST Client para Invocar o Cambio Service (14/06/2024)
+      - http://localhost:8100/book-service/6/BRL
+			{
+			"id": 6,
+			"author": "Martin Fowler e Kent Beck",
+			"price": 88.13,
+			"title": "Refactoring",
+			"environment": "8100 FEIGN",
+			"lauchDate": "2017-11-07"
+			}	  
 
-
+   
 
 
 
