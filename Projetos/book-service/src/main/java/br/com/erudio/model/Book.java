@@ -135,9 +135,4 @@ public class Book implements Serializable {
 				&& Objects.equals(launchDate, other.launchDate) && Objects.equals(price, other.price)
 				&& Objects.equals(title, other.title);
 	}
-	
-	
-	// @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-	// https://stackoverflow.com/questions/72464121/no-serializer-found-for-class-no-properties-discovered-to-create-beanserializer
-	// com.fasterxml.jackson.databind.exc.InvalidDefinitionException: No serializer found for class org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS) (through reference chain: br.com.erudio.model.Book$HibernateProxy$iRv8e3LE["hibernateLazyInitializer"])	
 }

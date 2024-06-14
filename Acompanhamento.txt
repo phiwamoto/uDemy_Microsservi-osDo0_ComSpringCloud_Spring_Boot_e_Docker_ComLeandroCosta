@@ -427,6 +427,38 @@ Seção 8: Criando e Conectando Microsserviços com Feign
 			}
 
 
+   - Ajustando os Problemas com o Jackson e Executando a Aplicação (14/06/2024)
+      - http://localhost:8100/book-service/7/MXN
+			{
+			"id": 7,
+			"author": "Eric Freeman, Elisabeth Freeman, Kathy Sierra, Bert Bates",
+			"price": 19.23,
+			"title": "Head First Design Patterns",
+			"environment": "8100",
+			"lauchDate": "2017-11-07",
+			"hibernateLazyInitializer": {}
+			}
+			
+      - http://localhost:8100/book-service/7/ARS
+			{
+			"id": 7,
+			"author": "Eric Freeman, Elisabeth Freeman, Kathy Sierra, Bert Bates",
+			"price": 19.23,
+			"title": "Head First Design Patterns",
+			"environment": "8100",
+			"lauchDate": "2017-11-07",
+			"hibernateLazyInitializer": {}
+			}
+			
+			{
+			"id": 7,
+			"author": "Eric Freeman, Elisabeth Freeman, Kathy Sierra, Bert Bates",
+			"price": 19.23,
+			"title": "Head First Design Patterns",
+			"environment": "8100",
+			"lauchDate": "2017-11-07"
+			}			
+
 
 
 
