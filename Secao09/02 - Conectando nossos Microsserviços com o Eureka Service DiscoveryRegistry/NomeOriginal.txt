@@ -1,0 +1,2 @@
+0903+Conectando+nossos+Microsserviços+com+o+Eureka+Service+Discovery-Registry+-+Alterações+no+YML.yml
+0903+Conectando+nossos+Microsserviços+com+o+Eureka+Service+Discovery-Registry+-+Dependência.xml

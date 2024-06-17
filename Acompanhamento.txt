@@ -500,12 +500,13 @@ Seção 8: Criando e Conectando Microsserviços com Feign
    
    - Apresentação da Seção - Service Discovery e Service Registry com Eureka (14/06/2024)
    
-   - Criando uma Aplicação Service Discovery/Registry com Eureka (17/06/2024) 
+   - Criando uma Aplicação Service Discovery/Registry com Eureka (17/06/2024)
       - Criado um projeto novo
       - http://localhost:8761/
    
+   - Conectando nossos Microsserviços com o Eureka Service Discovery/Registry (17/06/2024)
+      - Ajustes dos outros projetos (cliente)
    
-
 
 
 
