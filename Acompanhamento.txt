@@ -509,7 +509,7 @@ Seção 8: Criando e Conectando Microsserviços com Feign
    
    - Conclusão da Seção - Service Discovery e Service Registry com Eureka (17/06/2024) 
 
-
+   - Apresentação da Seção - Load Balancing com Eureka, Feign e Spring Cloud LB (17/06/2024) 
 
 
 
