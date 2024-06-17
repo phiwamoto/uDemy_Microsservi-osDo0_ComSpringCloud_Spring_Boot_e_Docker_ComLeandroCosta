@@ -507,11 +507,42 @@ Seção 8: Criando e Conectando Microsserviços com Feign
    - Conectando nossos Microsserviços com o Eureka Service Discovery/Registry (17/06/2024)
       - Ajustes dos outros projetos (cliente)
    
-   - Conclusão da Seção - Service Discovery e Service Registry com Eureka (17/06/2024) 
+   - Conclusão da Seção - Service Discovery e Service Registry com Eureka (17/06/2024)
 
-   - Apresentação da Seção - Load Balancing com Eureka, Feign e Spring Cloud LB (17/06/2024) 
+   - Apresentação da Seção - Load Balancing com Eureka, Feign e Spring Cloud LB (17/06/2024)
 
+   - Implementando Load Balancing com Eureka, Feign e Spring Cloud LoadBalancer (17/06/2024)
+      - http://localhost:8761/
+	     BOOK-SERVICE	n/a (2)	(2)	UP (2) - DESKTOP-8NL26PL:book-service:8100 , DESKTOP-8NL26PL:book-service:8101
+	     CAMBIO-SERVICE	n/a (2)	(2)	UP (2) - DESKTOP-8NL26PL:cambio-service:8000 , DESKTOP-8NL26PL:cambio-service:8001
+      
+	  - http://localhost:8100/book-service/14/BRL
+			{
+			"id": 14,
+			"author": "Marc J. Schiller",
+			"price": 45.1,
+			"title": "Os 11 segredos de líderes de TI altamente influentes",
+			"environment": "Book Port: 8100 Cambio Port 8000",
+			"lauchDate": "2017-11-07"
+			}
+			
+			{
+			"id": 14,
+			"author": "Marc J. Schiller",
+			"price": 45.1,
+			"title": "Os 11 segredos de líderes de TI altamente influentes",
+			"environment": "Book Port: 8100 Cambio Port 8001",
+			"lauchDate": "2017-11-07"
+			}			
 
+			{
+			"id": 14,
+			"author": "Marc J. Schiller",
+			"price": 45.1,
+			"title": "Os 11 segredos de líderes de TI altamente influentes",
+			"environment": "Book Port: 8100 Cambio Port 8002",
+			"lauchDate": "2017-11-07"
+			}
 
 
 
