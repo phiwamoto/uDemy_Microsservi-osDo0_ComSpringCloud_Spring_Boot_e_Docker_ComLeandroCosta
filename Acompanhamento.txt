@@ -569,6 +569,90 @@ Seção 8: Criando e Conectando Microsserviços com Feign
 			CAMBIO-SERVICE	n/a (3)	(3)	UP (3) - DESKTOP-8NL26PL:cambio-service:8002 , DESKTOP-8NL26PL:cambio-service:8000 , DESKTOP-8NL26PL:cambio-service:8001
 
 
+   - Habilitando Discovery Location com Eureka para Spring Cloud Gateway (18/06/2024)
+      - http://localhost:8001/cambio-service/8/USD/CLP
+			{
+			"id": 5,
+			"from": "USD",
+			"to": "CLP",
+			"conversionFactor": 713.3,
+			"conversionValue": 5706.4,
+			"environment": "8001"
+			}
+
+      - http://localhost:8765/cambio-service/cambio-service/8/USD/CLP
+			{
+			"id": 5,
+			"from": "USD",
+			"to": "CLP",
+			"conversionFactor": 713.3,
+			"conversionValue": 5706.4,
+			"environment": "8000"
+			}
+
+      - http://localhost:8100/book-service/14/BRL
+			{
+			"id": 14,
+			"author": "Marc J. Schiller",
+			"price": 45.1,
+			"title": "Os 11 segredos de líderes de TI altamente influentes",
+			"environment": "Book Port: 8100 Cambio Port 8000",
+			"lauchDate": "2017-11-07"
+			}
+
+      - http://localhost:8765/book-service/book-service/14/BRL
+			{
+			"id": 14,
+			"author": "Marc J. Schiller",
+			"price": 45.1,
+			"title": "Os 11 segredos de líderes de TI altamente influentes",
+			"environment": "Book Port: 8100 Cambio Port 8002",
+			"lauchDate": "2017-11-07"
+			}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

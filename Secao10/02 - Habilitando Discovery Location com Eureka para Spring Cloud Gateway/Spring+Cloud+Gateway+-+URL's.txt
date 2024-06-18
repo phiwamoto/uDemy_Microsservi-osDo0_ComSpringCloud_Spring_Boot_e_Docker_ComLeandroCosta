@@ -1,0 +1,19 @@
+URL's Originais
+
+http://localhost:8000/cambio-service/5/USD/BRL
+http://localhost:8100/book-service/14/BRL
+
+URL's Através do API Gateway
+
+http://localhost:8765/BOOK-SERVICE/book-service/14/BRL
+http://localhost:8765/CAMBIO-SERVICE/cambio-service/8/USD/CLP
+
+URL's Através do API Gateway Lower Case
+
+http://localhost:8765/book-service/book-service/14/BRL
+http://localhost:8765/cambio-service/cambio-service/8/USD/CLP
+
+URL's das Próximas Aulas
+
+http://localhost:8765/book-service/14/BRL
+http://localhost:8765/cambio-service/8/USD/CLP
