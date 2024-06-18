@@ -544,6 +544,30 @@ Seção 8: Criando e Conectando Microsserviços com Feign
 			"lauchDate": "2017-11-07"
 			}
 
+   - Spring Cloud API Gateway (Zuul) (17/06/2024 e 18/06/2024)
+      - http://localhost:8765/actuator
+			{
+			"_links": {
+			"self": {
+			"href": "http://localhost:8765/actuator",
+			"templated": false
+			},
+			"health": {
+			"href": "http://localhost:8765/actuator/health",
+			"templated": false
+			},
+			"health-path": {
+			"href": "http://localhost:8765/actuator/health/{*path}",
+			"templated": true
+			}
+			}
+			}
+
+      - http://localhost:8761/
+			API-GATEWAY	n/a (1)	(1)	UP (1) - DESKTOP-8NL26PL:api-gateway:8765
+			BOOK-SERVICE	n/a (2)	(2)	UP (2) - DESKTOP-8NL26PL:book-service:8100 , DESKTOP-8NL26PL:book-service:8101
+			CAMBIO-SERVICE	n/a (3)	(3)	UP (3) - DESKTOP-8NL26PL:cambio-service:8002 , DESKTOP-8NL26PL:cambio-service:8000 , DESKTOP-8NL26PL:cambio-service:8001
+
 
 
 
