@@ -611,8 +611,88 @@ Seção 8: Criando e Conectando Microsserviços com Feign
 			}
 
 
+   - Passando Header e Path Params com RouteLocator e Spring Cloud Gateway (18/06/2024 e 25/06/2024)
+      - http://localhost:8765/get
+			{
+			"args": {},
+			"headers": {
+			"Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+			"Accept-Encoding": "gzip, deflate, br, zstd",
+			"Accept-Language": "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7",
+			"Content-Length": "0",
+			"Forwarded": "proto=http;host=\"localhost:8765\";for=\"[0:0:0:0:0:0:0:1]:51156\"",
+			"Host": "httpbin.org",
+			"Sec-Ch-Ua": "\"Not/A)Brand\";v=\"8\", \"Chromium\";v=\"126\", \"Google Chrome\";v=\"126\"",
+			"Sec-Ch-Ua-Mobile": "?0",
+			"Sec-Ch-Ua-Platform": "\"Windows\"",
+			"Sec-Fetch-Dest": "document",
+			"Sec-Fetch-Mode": "navigate",
+			"Sec-Fetch-Site": "none",
+			"Sec-Fetch-User": "?1",
+			"Upgrade-Insecure-Requests": "1",
+			"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
+			"X-Amzn-Trace-Id": "Root=1-667b63e2-60ed47472cce0f7504c66057",
+			"X-Forwarded-Host": "localhost:8765"
+			},
+			"origin": "0:0:0:0:0:0:0:1, 201.25.168.97",
+			"url": "http://localhost:8765/get"
+			}	  
 
-
+			{
+			"args": {},
+			"headers": {
+			"Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+			"Accept-Encoding": "gzip, deflate, br, zstd",
+			"Accept-Language": "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7",
+			"Cache-Control": "max-age=0",
+			"Content-Length": "0",
+			"Forwarded": "proto=http;host=\"localhost:8765\";for=\"[0:0:0:0:0:0:0:1]:51162\"",
+			"Hello": "World",
+			"Host": "httpbin.org",
+			"Sec-Ch-Ua": "\"Not/A)Brand\";v=\"8\", \"Chromium\";v=\"126\", \"Google Chrome\";v=\"126\"",
+			"Sec-Ch-Ua-Mobile": "?0",
+			"Sec-Ch-Ua-Platform": "\"Windows\"",
+			"Sec-Fetch-Dest": "document",
+			"Sec-Fetch-Mode": "navigate",
+			"Sec-Fetch-Site": "none",
+			"Sec-Fetch-User": "?1",
+			"Upgrade-Insecure-Requests": "1",
+			"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
+			"X-Amzn-Trace-Id": "Root=1-667b6449-7d87cbb1128a358262f46763",
+			"X-Forwarded-Host": "localhost:8765"
+			},
+			"origin": "0:0:0:0:0:0:0:1, 201.25.168.97",
+			"url": "http://localhost:8765/get"
+			}
+			
+			{
+			"args": {
+			"Hello": "World"
+			},
+			"headers": {
+			"Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+			"Accept-Encoding": "gzip, deflate, br, zstd",
+			"Accept-Language": "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7",
+			"Cache-Control": "max-age=0",
+			"Content-Length": "0",
+			"Forwarded": "proto=http;host=\"localhost:8765\";for=\"[0:0:0:0:0:0:0:1]:51174\"",
+			"Hello": "World",
+			"Host": "httpbin.org",
+			"Sec-Ch-Ua": "\"Not/A)Brand\";v=\"8\", \"Chromium\";v=\"126\", \"Google Chrome\";v=\"126\"",
+			"Sec-Ch-Ua-Mobile": "?0",
+			"Sec-Ch-Ua-Platform": "\"Windows\"",
+			"Sec-Fetch-Dest": "document",
+			"Sec-Fetch-Mode": "navigate",
+			"Sec-Fetch-Site": "none",
+			"Sec-Fetch-User": "?1",
+			"Upgrade-Insecure-Requests": "1",
+			"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
+			"X-Amzn-Trace-Id": "Root=1-667b64a2-2207b4d655de79d63e14863d",
+			"X-Forwarded-Host": "localhost:8765"
+			},
+			"origin": "0:0:0:0:0:0:0:1, 201.25.168.97",
+			"url": "http://localhost:8765/get?Hello=World"
+			}			
 
 
 
