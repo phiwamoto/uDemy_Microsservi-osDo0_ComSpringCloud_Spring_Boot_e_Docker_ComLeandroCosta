@@ -694,7 +694,63 @@ Seção 8: Criando e Conectando Microsserviços com Feign
 			"url": "http://localhost:8765/get?Hello=World"
 			}			
 
-
+   - Rotas com RouteLocator e Spring Cloud Gateway (25/06/2024 e 08/07/2024)
+      - http://localhost:8761/
+	  - http://localhost:8765/cambio-service/8/USD/CLP
+			{
+			"id": 5,
+			"from": "USD",
+			"to": "CLP",
+			"conversionFactor": 713.3,
+			"conversionValue": 5706.4,
+			"environment": "8000"
+			}	  
+			
+			{
+			"id": 5,
+			"from": "USD",
+			"to": "CLP",
+			"conversionFactor": 713.3,
+			"conversionValue": 5706.4,
+			"environment": "8002"
+			}
+	  
+	  - http://localhost:8765/book-service/14/BRL
+			{
+			"id": 14,
+			"author": "Marc J. Schiller",
+			"price": 45.1,
+			"title": "Os 11 segredos de líderes de TI altamente influentes",
+			"environment": "Book Port: 8100 Cambio Port 8000",
+			"lauchDate": "2017-11-07"
+			}
+	  
+			{
+			"id": 14,
+			"author": "Marc J. Schiller",
+			"price": 45.1,
+			"title": "Os 11 segredos de líderes de TI altamente influentes",
+			"environment": "Book Port: 8101 Cambio Port 8001",
+			"lauchDate": "2017-11-07"
+			}
+	  
+	  
+		@Bean
+		public RouteLocator gatewayRouter(RouteLocatorBuilder builder) {
+			return builder.routes()
+					.route(p -> p.path("/get")
+					.filters(f -> f
+							.addRequestHeader("Hello", "World")
+							.addRequestParameter("Hello", "World"))
+					.uri("http://httpbin.org:80"))
+					.route(p -> p.path("/cambio-service/**")
+							.uri("lb://cambio-service"))
+					.route(p -> p.path("/book-service/**")
+							.uri("lb://book-service"))				
+					.build();
+		}   
+   
+   
 
 
 
