@@ -760,6 +760,12 @@ Seção 8: Criando e Conectando Microsserviços com Feign
    
    
    - Apresentação da Seção - Circuit Breaker com Resilience4j (16/07/2024)
+   
+   
+   - Circuit Breaker com Resilience4j (16/07/2024)
+      - resilience4j spring boot
+	     - https://resilience4j.readme.io/docs/getting-started-3
+	  - http://localhost:8765/book-service/foo-bar
 
 
 
