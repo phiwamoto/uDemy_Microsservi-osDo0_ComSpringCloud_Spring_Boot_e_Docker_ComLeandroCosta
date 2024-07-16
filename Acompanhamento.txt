@@ -756,6 +756,8 @@ Seção 8: Criando e Conectando Microsserviços com Feign
       - http://localhost:8765/book-service/14/BRL
 
 
+   - Conclusão da Seção - Load Balancing com Eureka, Feign e Spring Cloud LB (16/07/2024)
+
 
 
 
