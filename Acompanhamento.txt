@@ -757,6 +757,9 @@ Seção 8: Criando e Conectando Microsserviços com Feign
 
 
    - Conclusão da Seção - Load Balancing com Eureka, Feign e Spring Cloud LB (16/07/2024)
+   
+   
+   - Apresentação da Seção - Circuit Breaker com Resilience4j (16/07/2024)
 
 
 
