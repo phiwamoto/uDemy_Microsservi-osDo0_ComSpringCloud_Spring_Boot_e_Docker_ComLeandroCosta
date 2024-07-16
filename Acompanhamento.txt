@@ -751,8 +751,9 @@ Seção 8: Criando e Conectando Microsserviços com Feign
 		}   
    
    
-
-
+   - Logging Filter com Spring Cloud Gateway (Zuul) (16/07/2024)
+      - http://localhost:8765/cambio-service/8/USD/CLP
+      - http://localhost:8765/book-service/14/BRL
 
 
 
