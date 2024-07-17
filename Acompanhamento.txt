@@ -913,9 +913,37 @@ Seção 8: Criando e Conectando Microsserviços com Feign
 			at java.base/java.net.Socket.connect(Socket.java:686) ~[na:na]
 
 
+ - Fallback Methods com Resilience4j Wait Duration e Exponencial Backoff (16/07/2024)
+     
+	 - http://localhost:8765/book-service/foo-bar
+		2024-07-16T21:27:44.115-03:00  INFO 5484 --- [book-service] [nio-8100-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+		2024-07-16T21:27:44.116-03:00  INFO 5484 --- [book-service] [nio-8100-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+		2024-07-16T21:27:44.118-03:00  INFO 5484 --- [book-service] [nio-8100-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+		2024-07-16T21:27:44.198-03:00  INFO 5484 --- [book-service] [nio-8100-exec-2] b.c.erudio.controller.FooBarController   : Request to foo-bar is received!
+		2024-07-16T21:27:47.419-03:00  INFO 5484 --- [book-service] [nio-8100-exec-2] b.c.erudio.controller.FooBarController   : Request to foo-bar is received!
+		2024-07-16T21:27:47.929-03:00  INFO 5484 --- [book-service] [nio-8100-exec-2] b.c.erudio.controller.FooBarController   : Request to foo-bar is received!
+		2024-07-16T21:27:48.442-03:00  INFO 5484 --- [book-service] [nio-8100-exec-2] b.c.erudio.controller.FooBarController   : Request to foo-bar is received!
+		2024-07-16T21:27:48.955-03:00  INFO 5484 --- [book-service] [nio-8100-exec-2] b.c.erudio.controller.FooBarController   : Request to foo-bar is received!
+        
+		*** Configurado o ""wait-duration: 1s""
+		2024-07-16T21:31:35.123-03:00  INFO 6732 --- [book-service] [nio-8100-exec-5] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+		2024-07-16T21:31:35.123-03:00  INFO 6732 --- [book-service] [nio-8100-exec-5] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+		2024-07-16T21:31:35.125-03:00  INFO 6732 --- [book-service] [nio-8100-exec-5] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+		2024-07-16T21:31:35.206-03:00  INFO 6732 --- [book-service] [nio-8100-exec-5] b.c.erudio.controller.FooBarController   : Request to foo-bar is received!
+		2024-07-16T21:31:38.918-03:00  INFO 6732 --- [book-service] [nio-8100-exec-5] b.c.erudio.controller.FooBarController   : Request to foo-bar is received!
+		2024-07-16T21:31:39.944-03:00  INFO 6732 --- [book-service] [nio-8100-exec-5] b.c.erudio.controller.FooBarController   : Request to foo-bar is received!
+		2024-07-16T21:31:40.978-03:00  INFO 6732 --- [book-service] [nio-8100-exec-5] b.c.erudio.controller.FooBarController   : Request to foo-bar is received!
+		2024-07-16T21:31:41.994-03:00  INFO 6732 --- [book-service] [nio-8100-exec-5] b.c.erudio.controller.FooBarController   : Request to foo-bar is received!
 
-
-
+		*** Configurado o ""enable-exponential-backoff: true"" -- aumenta o tempo conforme as tentativas - exponencial
+		2024-07-16T21:41:22.170-03:00  INFO 8208 --- [book-service] [nio-8101-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+		2024-07-16T21:41:22.171-03:00  INFO 8208 --- [book-service] [nio-8101-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+		2024-07-16T21:41:22.172-03:00  INFO 8208 --- [book-service] [nio-8101-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+		2024-07-16T21:41:22.224-03:00  INFO 8208 --- [book-service] [nio-8101-exec-1] b.c.erudio.controller.FooBarController   : Request to foo-bar is received!
+		2024-07-16T21:41:26.006-03:00  INFO 8208 --- [book-service] [nio-8101-exec-1] b.c.erudio.controller.FooBarController   : Request to foo-bar is received!
+		2024-07-16T21:41:27.545-03:00  INFO 8208 --- [book-service] [nio-8101-exec-1] b.c.erudio.controller.FooBarController   : Request to foo-bar is received!
+		2024-07-16T21:41:29.812-03:00  INFO 8208 --- [book-service] [nio-8101-exec-1] b.c.erudio.controller.FooBarController   : Request to foo-bar is received!
+		2024-07-16T21:41:33.198-03:00  INFO 8208 --- [book-service] [nio-8101-exec-1] b.c.erudio.controller.FooBarController   : Request to foo-bar is received!
 
 
 

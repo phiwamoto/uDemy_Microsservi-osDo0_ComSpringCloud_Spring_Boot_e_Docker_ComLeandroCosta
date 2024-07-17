@@ -16,12 +16,17 @@ public class FooBarController {
 	private Logger logger = LoggerFactory.getLogger(FooBarController.class);
 
 	@GetMapping("foo-bar")
-	@Retry(name = "for-bar") // Vai tentar a request 3 vezes com nome "defaut", mas criamos no application.yml a properties e definimos 5 vezes
+	@Retry(name = "for-bar", fallbackMethod = "fallbackMethod") // Vai tentar a request 3 vezes com nome "defaut", mas criamos no application.yml a properties e definimos 5 vezes
 	public String fooBar() {
 		logger.info("Request to foo-bar is received!");
 		var response = new RestTemplate().getForEntity("http://localhot:8080/foo-bar", String.class);
 		return response.getBody();
 		
 		//return "Foo-Bar!!!";
+	}
+	
+	public String fallbackMethod(Exception ex) {
+		return "fallbackMethod foo-bar";
+		
 	}
 }
