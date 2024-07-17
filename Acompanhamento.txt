@@ -1092,6 +1092,9 @@ Seção 8: Criando e Conectando Microsserviços com Feign
  - Conclusão da Seção - Circuit Breaker com Resilience4j (16/07/2024)
  
  
+ - Apresentação da Seção - Configurando o Swagger OpenAPI em Microsserviços (16/07/2024)
+ 
+ 
  
 
 
