@@ -1089,6 +1089,10 @@ Seção 8: Criando e Conectando Microsserviços com Feign
 			+ FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeWebRequestCommand
 
 
+ - Conclusão da Seção - Circuit Breaker com Resilience4j (16/07/2024)
+ 
+ 
+ 
 
 
 
