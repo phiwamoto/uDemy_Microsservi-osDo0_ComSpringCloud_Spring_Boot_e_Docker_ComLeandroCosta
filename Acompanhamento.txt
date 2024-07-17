@@ -768,21 +768,149 @@ Seção 8: Criando e Conectando Microsserviços com Feign
 	  - http://localhost:8765/book-service/foo-bar
 
 
+ - Retry com Resilience4j (16/07/2024)
+    - http://localhost:8765/book-service/foo-bar
+		Whitelabel Error Page
+		This application has no configured error view, so you are seeing this as a fallback.
+
+		Tue Jul 16 20:52:32 BRT 2024
+		[9454b904-6] There was an unexpected error (type=Internal Server Error, status=500).
+
+
+    - Pilha de erro do projeto API-GATEWAY
+	
+		2024-07-16T20:52:32.803-03:00 ERROR 11644 --- [api-gateway] [ctor-http-nio-6] a.w.r.e.AbstractErrorWebExceptionHandler : [9454b904-6]  500 Server Error for HTTP GET "/book-service/foo-bar"
+
+		io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: localhost/127.0.0.1:8100
+			Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+		Error has been observed at the following site(s):
+			*__checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+			*__checkpoint ⇢ HTTP GET "/book-service/foo-bar" [ExceptionHandlingWebHandler]
+		Original Stack Trace:
+		Caused by: java.net.ConnectException: Connection refused: no further information
+			at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+			at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672) ~[na:na]
+			at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:946) ~[na:na]
+			at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:336) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+			at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:339) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+			at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:776) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+			at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+			at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+			at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) ~[netty-transport-4.1.110.Final.jar:4.1.110.Final]
+			at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:994) ~[netty-common-4.1.110.Final.jar:4.1.110.Final]
+			at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.110.Final.jar:4.1.110.Final]
+			at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.110.Final.jar:4.1.110.Final]
+			at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+		2024-07-16T20:52:44.587-03:00  INFO 11644 --- [api-gateway] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 
 
 
+		2024-07-16T21:05:01.400-03:00 ERROR 15388 --- [book-service] [nio-8100-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhot:8080/foo-bar": localhot] with root cause
 
+		java.net.UnknownHostException: localhot
+			at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567) ~[na:na]
+			at java.base/java.net.Socket.connect(Socket.java:751) ~[na:na]
+			at java.base/java.net.Socket.connect(Socket.java:686) ~[na:na]
+			at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:183) ~[na:na]
+			at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:531) ~[na:na]
+			at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:636) ~[na:na]
+			at java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:280) ~[na:na]
+			at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:386) ~[na:na]
+			at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:408) ~[na:na]
+			at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1304) ~[na:na]
+			at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1237) ~[na:na]
+			at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1123) ~[na:na]
+			at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1052) ~[na:na]
+			at org.springframework.http.client.SimpleClientHttpRequest.executeInternal(SimpleClientHttpRequest.java:79) ~[spring-web-6.1.5.jar:6.1.5]
+			at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70) ~[spring-web-6.1.5.jar:6.1.5]
+			at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66) ~[spring-web-6.1.5.jar:6.1.5]
+			at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889) ~[spring-web-6.1.5.jar:6.1.5]
+			at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790) ~[spring-web-6.1.5.jar:6.1.5]
+			at org.springframework.web.client.RestTemplate.getForEntity(RestTemplate.java:431) ~[spring-web-6.1.5.jar:6.1.5]
+			at br.com.erudio.controller.FooBarController.fooBar(FooBarController.java:14) ~[classes/:na]
+			at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+			at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+			at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.5.jar:6.1.5]
+			at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.5.jar:6.1.5]
+			at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.5.jar:6.1.5]
+			at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:925) ~[spring-webmvc-6.1.5.jar:6.1.5]
+			at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:830) ~[spring-webmvc-6.1.5.jar:6.1.5]
+			at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.5.jar:6.1.5]
+			at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.5.jar:6.1.5]
+			at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.5.jar:6.1.5]
+			at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.5.jar:6.1.5]
+			at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.1.5.jar:6.1.5]
+			at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.19.jar:6.0]
+			at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.5.jar:6.1.5]
+			at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.19.jar:6.0]
+			at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+			at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+			at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.19.jar:10.1.19]
+			at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+			at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+			at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.5.jar:6.1.5]
+			at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.5.jar:6.1.5]
+			at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+			at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+			at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.5.jar:6.1.5]
+			at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.5.jar:6.1.5]
+			at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+			at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+			at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:109) ~[spring-web-6.1.5.jar:6.1.5]
+			at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.5.jar:6.1.5]
+			at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+			at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+			at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.5.jar:6.1.5]
+			at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.5.jar:6.1.5]
+			at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+			at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+			at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+			at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+			at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+			at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+			at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+			at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+			at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+			at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+			at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+			at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+			at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+			at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+			at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+			at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+			at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+			at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
 
+      - Tentativa de 3 vezes
+	  
+		2024-07-16T21:11:41.982-03:00  INFO 5132 --- [book-service] [nio-8101-exec-2] b.c.erudio.controller.FooBarController   : Request to foo-bar is received!
+		2024-07-16T21:11:45.208-03:00  INFO 5132 --- [book-service] [nio-8101-exec-2] b.c.erudio.controller.FooBarController   : Request to foo-bar is received!
+		2024-07-16T21:11:45.720-03:00  INFO 5132 --- [book-service] [nio-8101-exec-2] b.c.erudio.controller.FooBarController   : Request to foo-bar is received!
+		2024-07-16T21:11:45.750-03:00 ERROR 5132 --- [book-service] [nio-8101-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhot:8080/foo-bar": localhot] with root cause
 
+		java.net.UnknownHostException: localhot
+			at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567) ~[na:na]
+			at java.base/java.net.Socket.connect(Socket.java:751) ~[na:na]
+			at java.base/java.net.Socket.connect(Socket.java:686) ~[na:na]
+			at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:183) ~[na:na]
+			at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:531) ~[na:na]
+			at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:636) ~[na:na]
 
+      - Tentativa de 5 vezes
 
+		2024-07-16T21:18:04.684-03:00  INFO 4416 --- [book-service] [nio-8101-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+		2024-07-16T21:18:04.732-03:00  INFO 4416 --- [book-service] [nio-8101-exec-1] b.c.erudio.controller.FooBarController   : Request to foo-bar is received!
+		2024-07-16T21:18:07.954-03:00  INFO 4416 --- [book-service] [nio-8101-exec-1] b.c.erudio.controller.FooBarController   : Request to foo-bar is received!
+		2024-07-16T21:18:08.464-03:00  INFO 4416 --- [book-service] [nio-8101-exec-1] b.c.erudio.controller.FooBarController   : Request to foo-bar is received!
+		2024-07-16T21:18:08.977-03:00  INFO 4416 --- [book-service] [nio-8101-exec-1] b.c.erudio.controller.FooBarController   : Request to foo-bar is received!
+		2024-07-16T21:18:09.487-03:00  INFO 4416 --- [book-service] [nio-8101-exec-1] b.c.erudio.controller.FooBarController   : Request to foo-bar is received!
+		2024-07-16T21:18:09.507-03:00 ERROR 4416 --- [book-service] [nio-8101-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhot:8080/foo-bar": localhot] with root cause
 
-
-
-
-
-
-
+		java.net.UnknownHostException: localhot
+			at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567) ~[na:na]
+			at java.base/java.net.Socket.connect(Socket.java:751) ~[na:na]
+			at java.base/java.net.Socket.connect(Socket.java:686) ~[na:na]
 
 
 
