@@ -973,7 +973,120 @@ Seção 8: Criando e Conectando Microsserviços com Feign
 	   - Executando direto a cada 0.1 segundos
 
 
+ - Conhecendo as Features de Rate Limit e BulkHead no Resilience4j (16/07/2024)
+   - Chamada teste, da sucesso e depois para, depois libera, depois para -- @RateLimiter(name = "default") + configuracao application
+   - PS C:\Users\Pedro Henrique> while (1) {curl http://localhost:8765/book-service/foo-bar; sleep 0.1}
 
+		StatusCode        : 200                                                                                                              StatusDescription : OK                                                                                                               Content           : Foo-Bar!!!                                                                                                       RawContent        : HTTP/1.1 200 OK                                                                                                                      Content-Length: 10
+							Content-Type: text/plain;charset=UTF-8
+							Date: Wed, 17 Jul 2024 01:44:04 GMT
+
+							Foo-Bar!!!
+		Forms             : {}
+		Headers           : {[Content-Length, 10], [Content-Type, text/plain;charset=UTF-8], [Date, Wed, 17 Jul 2024 01:44:04 GMT]}
+		Images            : {}
+		InputFields       : {}
+		Links             : {}
+		ParsedHtml        : mshtml.HTMLDocumentClass
+		RawContentLength  : 10
+
+		StatusCode        : 200                                                                                                              StatusDescription : OK                                                                                                               Content           : Foo-Bar!!!                                                                                                       RawContent        : HTTP/1.1 200 OK                                                                                                                      Content-Length: 10
+							Content-Type: text/plain;charset=UTF-8
+							Date: Wed, 17 Jul 2024 01:44:04 GMT
+
+							Foo-Bar!!!
+		Forms             : {}
+		Headers           : {[Content-Length, 10], [Content-Type, text/plain;charset=UTF-8], [Date, Wed, 17 Jul 2024 01:44:04 GMT]}
+		Images            : {}
+		InputFields       : {}
+		Links             : {}
+		ParsedHtml        : mshtml.HTMLDocumentClass
+		RawContentLength  : 10
+
+		StatusCode        : 200                                                                                                              StatusDescription : OK                                                                                                               Content           : Foo-Bar!!!                                                                                                       RawContent        : HTTP/1.1 200 OK                                                                                                                      Content-Length: 10
+							Content-Type: text/plain;charset=UTF-8
+							Date: Wed, 17 Jul 2024 01:44:04 GMT
+
+							Foo-Bar!!!
+		Forms             : {}
+		Headers           : {[Content-Length, 10], [Content-Type, text/plain;charset=UTF-8], [Date, Wed, 17 Jul 2024 01:44:04 GMT]}
+		Images            : {}
+		InputFields       : {}
+		Links             : {}
+		ParsedHtml        : mshtml.HTMLDocumentClass
+		RawContentLength  : 10
+
+		StatusCode        : 200                                                                                                              StatusDescription : OK                                                                                                               Content           : Foo-Bar!!!                                                                                                       RawContent        : HTTP/1.1 200 OK                                                                                                                      Content-Length: 10
+							Content-Type: text/plain;charset=UTF-8
+							Date: Wed, 17 Jul 2024 01:44:04 GMT
+
+							Foo-Bar!!!
+		Forms             : {}
+		Headers           : {[Content-Length, 10], [Content-Type, text/plain;charset=UTF-8], [Date, Wed, 17 Jul 2024 01:44:04 GMT]}
+		Images            : {}
+		InputFields       : {}
+		Links             : {}
+		ParsedHtml        : mshtml.HTMLDocumentClass
+		RawContentLength  : 10
+
+		StatusCode        : 200                                                                                                              StatusDescription : OK                                                                                                               Content           : Foo-Bar!!!                                                                                                       RawContent        : HTTP/1.1 200 OK                                                                                                                      Content-Length: 10
+							Content-Type: text/plain;charset=UTF-8
+							Date: Wed, 17 Jul 2024 01:44:06 GMT
+
+							Foo-Bar!!!
+		Forms             : {}
+		Headers           : {[Content-Length, 10], [Content-Type, text/plain;charset=UTF-8], [Date, Wed, 17 Jul 2024 01:44:06 GMT]}
+		Images            : {}
+		InputFields       : {}
+		Links             : {}
+		ParsedHtml        : mshtml.HTMLDocumentClass
+		RawContentLength  : 10
+
+		StatusCode        : 200                                                                                                              StatusDescription : OK                                                                                                               Content           : Foo-Bar!!!                                                                                                       RawContent        : HTTP/1.1 200 OK                                                                                                                      Content-Length: 10
+							Content-Type: text/plain;charset=UTF-8
+							Date: Wed, 17 Jul 2024 01:44:09 GMT
+
+							Foo-Bar!!!
+		Forms             : {}
+		Headers           : {[Content-Length, 10], [Content-Type, text/plain;charset=UTF-8], [Date, Wed, 17 Jul 2024 01:44:09 GMT]}
+		Images            : {}
+		InputFields       : {}
+		Links             : {}
+		ParsedHtml        : mshtml.HTMLDocumentClass
+		RawContentLength  : 10
+
+		StatusCode        : 200
+		StatusDescription : OK
+		Content           : Foo-Bar!!!
+		RawContent        : HTTP/1.1 200 OK
+							Content-Length: 10
+							Content-Type: text/plain;charset=UTF-8
+							Date: Wed, 17 Jul 2024 01:44:09 GMT
+																																								 Foo-Bar!!!                                                                                                       Forms             : {}                                                                                                               Headers           : {[Content-Length, 10], [Content-Type, text/plain;charset=UTF-8], [Date, Wed, 17 Jul 2024 01:44:09 GMT]}          Images            : {}
+		InputFields       : {}
+		Links             : {}
+		ParsedHtml        : mshtml.HTMLDocumentClass
+		RawContentLength  : 10
+
+		StatusCode        : 200
+		StatusDescription : OK
+		Content           : Foo-Bar!!!
+		RawContent        : HTTP/1.1 200 OK
+							Content-Length: 10
+							Content-Type: text/plain;charset=UTF-8
+							Date: Wed, 17 Jul 2024 01:44:09 GMT
+																																								 Foo-Bar!!!                                                                                                       Forms             : {}                                                                                                               Headers           : {[Content-Length, 10], [Content-Type, text/plain;charset=UTF-8], [Date, Wed, 17 Jul 2024 01:44:09 GMT]}          Images            : {}
+		InputFields       : {}
+		Links             : {}
+		ParsedHtml        : mshtml.HTMLDocumentClass
+		RawContentLength  : 10
+
+		curl : O servidor remoto retornou um erro: (500) Erro Interno do Servidor.
+		No linha:1 caractere:12
+		+ while (1) {curl http://localhost:8765/book-service/foo-bar; sleep 0.1 ...
+		+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			+ CategoryInfo          : InvalidOperation: (System.Net.HttpWebRequest:HttpWebRequest) [Invoke-WebRequest], WebException
+			+ FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeWebRequestCommand
 
 
 

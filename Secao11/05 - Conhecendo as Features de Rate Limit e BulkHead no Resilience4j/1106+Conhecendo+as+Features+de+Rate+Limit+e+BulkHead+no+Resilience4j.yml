@@ -1,0 +1,10 @@
+resilience4j:
+  bulkhead:
+    instances:
+      default:
+        max-concurrent-calls: 10
+  ratelimiter:
+    instances:
+      default:
+        limit-for-period: 2
+        limit-refresh-period: 10s
