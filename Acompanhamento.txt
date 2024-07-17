@@ -946,7 +946,31 @@ Seção 8: Criando e Conectando Microsserviços com Feign
 		2024-07-16T21:41:33.198-03:00  INFO 8208 --- [book-service] [nio-8101-exec-1] b.c.erudio.controller.FooBarController   : Request to foo-bar is received!
 
 
+ - Conhecendo as Features de Circuit Breaker do Resilience4j (16/07/2024)
+    - http://localhost:8765/book-service/foo-bar
 
+    - Executado pelo Power Shell	
+		PS C:\Users\Pedro Henrique> curl http://localhost:8765/book-service/foo-bar
+
+		StatusCode        : 200
+		StatusDescription : OK
+		Content           : fallbackMethod foo-bar
+		RawContent        : HTTP/1.1 200 OK
+							Content-Length: 22
+							Content-Type: text/plain;charset=UTF-8
+							Date: Wed, 17 Jul 2024 00:55:23 GMT
+
+							fallbackMethod foo-bar
+		Forms             : {}
+		Headers           : {[Content-Length, 22], [Content-Type, text/plain;charset=UTF-8], [Date, Wed, 17 Jul 2024 00:55:23 GMT]}
+		Images            : {}
+		InputFields       : {}
+		Links             : {}
+		ParsedHtml        : mshtml.HTMLDocumentClass
+		RawContentLength  : 22
+	
+    - PS C:\Users\Pedro Henrique> while (1) {curl http://localhost:8765/book-service/foo-bar; sleep 0.1}
+	   - Executando direto a cada 0.1 segundos
 
 
 
