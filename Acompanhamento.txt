@@ -1094,6 +1094,8 @@ Seção 8: Criando e Conectando Microsserviços com Feign
  
  - Apresentação da Seção - Configurando o Swagger OpenAPI em Microsserviços (16/07/2024)
  
+ - Por que Usar o Swagger OpenAPI nos seus Microsserviços (12/08/2024)
+ 
  
  
 
