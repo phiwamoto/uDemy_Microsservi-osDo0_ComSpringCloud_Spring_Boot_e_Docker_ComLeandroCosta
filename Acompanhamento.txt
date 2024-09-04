@@ -1169,8 +1169,9 @@ Seção 8: Criando e Conectando Microsserviços com Feign
 		}
 
 
-
-
+ - Ajustando as Rotas no API Gateway (03/09/2024)
+ 
+ 
 
 
 
