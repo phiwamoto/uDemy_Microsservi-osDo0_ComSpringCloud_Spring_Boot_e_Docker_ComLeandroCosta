@@ -1100,25 +1100,73 @@ Seção 8: Criando e Conectando Microsserviços com Feign
     - http://localhost:8101/v3/api-docs
 	- http://localhost:8100/v3/api-docs
  
- 
- 
+ - Configurando o SpringDoc OpenAPI UI (Swagger) nos dois Microservices (03/09/2024)
+    - http://localhost:8101/v3/api-docs
+	- http://localhost:8100/v3/api-docs
+
+    - http://localhost:8101/swagger-ui/index.html
+	- http://localhost:8100/swagger-ui/index.html
+
+    - http://localhost:8100/swagger-ui/index.html#/Book%20endpoint/findBook
+	  
+	  1 ARS
+	  
+		{
+		  "id": 1,
+		  "author": "Michael C. Feathers",
+		  "price": 793.24,
+		  "title": "Working effectively with legacy code",
+		  "environment": "Book Port: 8100 Cambio Port 8001",
+		  "lauchDate": "2017-11-29"
+		}
+
+
+	  1 CLP
+
+		{
+		  "id": 1,
+		  "author": "Michael C. Feathers",
+		  "price": 6112.99,
+		  "title": "Working effectively with legacy code",
+		  "environment": "Book Port: 8100 Cambio Port 8002",
+		  "lauchDate": "2017-11-29"
+		}
+
+
+	  1 BRL
+
+		{
+		  "id": 1,
+		  "author": "Michael C. Feathers",
+		  "price": 49.11,
+		  "title": "Working effectively with legacy code",
+		  "environment": "Book Port: 8100 Cambio Port 8000",
+		  "lauchDate": "2017-11-29"
+		}
 
 
 
+    - http://localhost:8000/v3/api-docs
+	- http://localhost:8001/v3/api-docs
+	- http://localhost:8002/v3/api-docs
+
+    - http://localhost:8000/swagger-ui/index.html
+	- http://localhost:8001/swagger-ui/index.html
+	- http://localhost:8002/swagger-ui/index.html
+
+    - http://localhost:8000/swagger-ui/index.html#/Cambio%20Service%20API/getCambio
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+	  7 USD BRL
+	  
+		{
+		  "id": 1,
+		  "from": "USD",
+		  "to": "BRL",
+		  "conversionFactor": 5.73,
+		  "conversionValue": 40.11,
+		  "environment": "8000"
+		}
 
 
 
