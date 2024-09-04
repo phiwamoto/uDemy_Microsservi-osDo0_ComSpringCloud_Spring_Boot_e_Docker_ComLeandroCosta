@@ -1096,6 +1096,10 @@ Seção 8: Criando e Conectando Microsserviços com Feign
  
  - Por que Usar o Swagger OpenAPI nos seus Microsserviços (12/08/2024)
  
+ - Configurando o Swagger OpenAPI no Book Microservice (12/08/2024 e 03/09/2024)
+    - http://localhost:8101/v3/api-docs
+	- http://localhost:8100/v3/api-docs
+ 
  
  
 

@@ -9,7 +9,10 @@ import org.springframework.web.client.RestTemplate;
 
 import io.github.resilience4j.bulkhead.annotation.Bulkhead;
 import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
+@Tag(name = "Foo bar")
 @RestController
 @RequestMapping("book-service")
 public class FooBarController {
@@ -17,6 +20,7 @@ public class FooBarController {
 	private Logger logger = LoggerFactory.getLogger(FooBarController.class);
 
 	@GetMapping("foo-bar")
+	@Operation(summary = "Foo bar")
 	//@Retry(name = "for-bar", fallbackMethod = "fallbackMethod") // Vai tentar a request 3 vezes com nome "defaut", mas criamos no application.yml a properties e definimos 5 vezes
 	//@CircuitBreaker(name = "default", fallbackMethod = "fallbackMethod") 
 	//@RateLimiter(name = "default")
