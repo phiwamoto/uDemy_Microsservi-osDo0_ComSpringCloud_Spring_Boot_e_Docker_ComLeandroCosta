@@ -1,0 +1,14 @@
+Eureka (Naming Server) --> http://localhost:8761/
+API Gateway Swagger    --> http://localhost:8765/swagger-ui.html
+API Gateway Cambio     --> http://localhost:8765/cambio-service/{amount}/{original_currency}/{to_currency}
+API Gateway Book       --> http://localhost:8765/book-service/{amount}/{to_currency}
+Cambio Microservice    --> http://localhost:8001/cambio-service/{amount}/{original_currency}/{to_currency}
+Book Microservice      --> http://localhost:8100/book-service/{amount}/{to_currency}
+
+Swager
+
+http://localhost:8100/v3/api-docs
+http://localhost:8000/v3/api-docs
+
+http://localhost:8100/swagger-ui.html
+http://localhost:8000/swagger-ui.html

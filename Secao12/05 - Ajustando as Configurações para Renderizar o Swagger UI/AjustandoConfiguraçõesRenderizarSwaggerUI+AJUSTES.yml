@@ -1,0 +1,20 @@
+# API Gateway
+
+- id: openapi
+  uri: lb://api-gateway
+  predicates:
+  - Path=/v3/api-docs/**
+  filters:
+  - RewritePath=/v3/api-docs/(?<path>.*), /$\{path}/v3/api-docs
+
+# Book Service
+springdoc:
+  show-actuator: true
+  api-docs:
+    path: book-service/v3/api-docs
+
+# Cambio Service
+springdoc:
+  show-actuator: true
+  api-docs:
+    path: cambio-service/v3/api-docs
