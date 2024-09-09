@@ -1184,4 +1184,18 @@ Seção 8: Criando e Conectando Microsserviços com Feign
 	- http://localhost:8765/webjars/swagger-ui/index.html?urls.primaryName=book-service
 	- http://localhost:8765/webjars/swagger-ui/index.html?urls.primaryName=cambio-service
 	
-
+ - Conclusão da Seção - Configurando o Swagger OpenAPI em Microsserviços (08/09/2024)
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
