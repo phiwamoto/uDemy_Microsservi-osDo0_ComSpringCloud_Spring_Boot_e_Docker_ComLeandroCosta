@@ -1171,11 +1171,10 @@ Seção 8: Criando e Conectando Microsserviços com Feign
 
  - Ajustando as Rotas no API Gateway (03/09/2024)
  
- - Adicionar o SpringDoc OpenAPI UI ao API Gateway (04/09/2024)
+ - Adicionar o SpringDoc OpenAPI UI ao API Gateway (04/09/2024 e 08/09/2024)
     - http://localhost:8765/swagger-ui.html
-    - http://localhost:8765/swagger-ui/index.html
- 
-
+	- http://localhost:8765/webjars/swagger-ui/index.html
+    - No operations defined in spec!
 
 
 
