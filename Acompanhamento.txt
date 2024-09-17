@@ -1188,6 +1188,7 @@ Seção 8: Criando e Conectando Microsserviços com Feign
  
  - Apresentação da Seção - Minicurso de Docker (16/09/2024)
  
+ - O que é o Docker (16/09/2024)
  
  
  
