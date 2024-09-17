@@ -1186,7 +1186,7 @@ Seção 8: Criando e Conectando Microsserviços com Feign
 	
  - Conclusão da Seção - Configurando o Swagger OpenAPI em Microsserviços (08/09/2024)
  
- 
+ - Apresentação da Seção - Minicurso de Docker (16/09/2024)
  
  
  
