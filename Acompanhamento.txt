@@ -1221,9 +1221,16 @@ Seção 8: Criando e Conectando Microsserviços com Feign
 
 		For more examples and ideas, visit:
 		 https://docs.docker.com/get-started/    
- 
- 
- 
+
+
+ - Noções Básicas de Dockerfile (30/09/2024)
+    - Se escreve Dockerfile somente com a inicial em maiusculo
+	- Texto plano
+	- Sintaxe simples
+	- Instruções de como construir uma imagem
+	
+	- Comando: docker build 
+	   - Contrói uma imagem docker à partir do Dockerfile
  
  
  
