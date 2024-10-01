@@ -1231,7 +1231,30 @@ Seção 8: Criando e Conectando Microsserviços com Feign
 	
 	- Comando: docker build 
 	   - Contrói uma imagem docker à partir do Dockerfile
- 
- 
- 
- 
+
+
+ - Dockerizando uma Aplicação Spring Boot (30/09/2024)
+    - http://localhost/hello-docker
+		{
+		"content": "Hello Docker",
+		"environment": null
+		}
+	- Dockerfile
+		FROM openjdk:16-jdk-slim
+		ARG JAR_FILE=target/*.jar
+		COPY ${JAR_FILE} app.jar
+		RUN bash -c 'touch /app.jar'
+		ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "/app.jar"]
+
+
+
+
+
+
+
+
+
+
+
+
+
