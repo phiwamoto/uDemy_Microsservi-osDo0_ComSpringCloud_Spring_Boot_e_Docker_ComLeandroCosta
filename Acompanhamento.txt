@@ -1246,7 +1246,15 @@ Seção 8: Criando e Conectando Microsserviços com Feign
 		RUN bash -c 'touch /app.jar'
 		ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "/app.jar"]
 
-
+ - Construindo a Nossa Própria Contêiner Image (30/09/2024)
+    - mvn clean package -DskipTests
+	- hello-docker-0.0.1-SNAPSHOT.jar
+	- docker build -t hello-docker:0.0.1-SNAPSHOT .
+	- docker images
+		PS C:\Users\Pedro Henrique> docker images
+		REPOSITORY     TAG              IMAGE ID       CREATED              SIZE
+		hello-docker   0.0.1-SNAPSHOT   a31fd8b92638   About a minute ago   438MB
+		hello-world    latest           d2c94e258dcb   17 months ago        13.3kB	
 
 
 
