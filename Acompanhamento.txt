@@ -1263,10 +1263,42 @@ Seção 8: Criando e Conectando Microsserviços com Feign
 	- phiwamoto@gmail.com
 	- senha: vide internamente
 
+ - Enviando a Nossa Container Image para o Docker Hub (21/10/2024)
+	- docker images
+		PS C:\Users\Pedro Henrique> docker images
+		REPOSITORY     TAG              IMAGE ID       CREATED         SIZE
+		hello-docker   0.0.1-SNAPSHOT   a31fd8b92638   3 weeks ago     438MB
+		hello-world    latest           d2c94e258dcb   17 months ago   13.3kB
+		PS C:\Users\Pedro Henrique>
+		
+	- docker tag hello-docker:0.0.1-SNAPSHOT phiwamoto/hello-docker:0.0.1-SNAPSHOT
+	   - Criando a tag do nosso container image
+	
+		PS C:\Users\Pedro Henrique> docker tag hello-docker:0.0.1-SNAPSHOT phiwamoto/hello-docker:0.0.1-SNAPSHOT
+		PS C:\Users\Pedro Henrique> docker images
+		REPOSITORY               TAG              IMAGE ID       CREATED         SIZE
+		hello-docker             0.0.1-SNAPSHOT   a31fd8b92638   3 weeks ago     438MB
+		phiwamoto/hello-docker   0.0.1-SNAPSHOT   a31fd8b92638   3 weeks ago     438MB
+		hello-world              latest           d2c94e258dcb   17 months ago   13.3kB
+		PS C:\Users\Pedro Henrique>
 
+   - docker login docker.io
+      - Vai tentar logar com as credencias, se não tiver vai pedir
 
+		PS C:\Users\Pedro Henrique> docker login docker.io
+		Authenticating with existing credentials...
+		Login Succeeded
+		PS C:\Users\Pedro Henrique>
 
-
-
-
-
+   - docker push phiwamoto/hello-docker:0.0.1-SNAPSHOT
+      - Enviando
+	  
+		PS C:\Users\Pedro Henrique> docker push phiwamoto/hello-docker:0.0.1-SNAPSHOT
+		The push refers to repository [docker.io/phiwamoto/hello-docker]
+		7d3efc794171: Pushed
+		0f211f970346: Pushed
+		41d848360b02: Mounted from library/openjdk
+		2bf2b8c78141: Mounted from library/openjdk
+		e8b689711f21: Mounted from library/openjdk
+		0.0.1-SNAPSHOT: digest: sha256:7767fa31ae5467179928575d3a317bd7d6bc91d79ec66b7f6a47e6f78b303f9f size: 1377
+		PS C:\Users\Pedro Henrique>
