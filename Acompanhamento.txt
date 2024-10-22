@@ -1258,7 +1258,10 @@ Seção 8: Criando e Conectando Microsserviços com Feign
 
  - Entendendo os Conceitos de Registry, Repository e Tag (30/09/2024)
  
-
+ - Criando uma Conta no Docker Hub (21/10/2024)
+    - https://hub.docker.com/
+	- phiwamoto@gmail.com
+	- senha: vide internamente
 
 
 
