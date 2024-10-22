@@ -1302,3 +1302,12 @@ Seção 8: Criando e Conectando Microsserviços com Feign
 		e8b689711f21: Mounted from library/openjdk
 		0.0.1-SNAPSHOT: digest: sha256:7767fa31ae5467179928575d3a317bd7d6bc91d79ec66b7f6a47e6f78b303f9f size: 1377
 		PS C:\Users\Pedro Henrique>
+
+ - Dockerfiles x Docker Images x Contêineres (21/10/2024)
+   - Dockerfile: É um arquivo de texto que contém uma série de instruções e comandos que definem como construir uma imagem Docker. Ele especifica o sistema operacional base, as dependências, as configurações e o que deve ser executado quando um contêiner é iniciado. Basicamente, é a receita para criar uma imagem.
+   - Docker Image: É um pacote leve, standalone e executável que contém tudo o que é necessário para executar uma aplicação, incluindo o código, bibliotecas, dependências e configurações. As imagens são criadas a partir de um Dockerfile e podem ser armazenadas em repositórios (como o Docker Hub) para serem compartilhadas e reutilizadas.
+   - Contêiner: É uma instância em execução de uma imagem Docker. Os contêineres são isolados uns dos outros e do sistema host, permitindo que aplicações sejam executadas de forma consistente em diferentes ambientes. Eles compartilham o kernel do sistema operacional, mas têm seus próprios sistemas de arquivos, processos e rede.
+   
+   - Dockerfile: receita para criar uma imagem.
+   - Docker Image: a construção em si, que contém tudo para executar a aplicação.
+   - Contêiner: a execução da imagem, isolada e pronta para uso.
