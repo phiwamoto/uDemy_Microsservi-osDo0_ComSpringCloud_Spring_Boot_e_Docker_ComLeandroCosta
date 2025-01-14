@@ -1311,3 +1311,66 @@ Seção 8: Criando e Conectando Microsserviços com Feign
    - Dockerfile: receita para criar uma imagem.
    - Docker Image: a construção em si, que contém tudo para executar a aplicação.
    - Contêiner: a execução da imagem, isolada e pronta para uso.
+   
+ - Entendendo os Conceitos de Image e Containers (14/01/2025)
+ 
+	PS C:\Users\Pedro Henrique> docker images
+	REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+	PS C:\Users\Pedro Henrique>
+ 
+	PS C:\Users\Pedro Henrique> docker run phiwamoto/hello-docker
+	Unable to find image 'phiwamoto/hello-docker:latest' locally
+	docker: Error response from daemon: manifest for phiwamoto/hello-docker:latest not found: manifest unknown: manifest unknown.
+	See 'docker run --help'.
+	PS C:\Users\Pedro Henrique>
+	
+	PS C:\Users\Pedro Henrique> docker run phiwamoto/hello-docker:0.0.1-SNAPSHOT
+	Unable to find image 'phiwamoto/hello-docker:0.0.1-SNAPSHOT' locally
+	0.0.1-SNAPSHOT: Pulling from phiwamoto/hello-docker
+	7d63c13d9b9b: Already exists
+	225be9814eda: Already exists
+	561d71bf7872: Already exists
+	202f7462915d: Already exists
+	4f0e512cfc5a: Already exists
+	Digest: sha256:7767fa31ae5467179928575d3a317bd7d6bc91d79ec66b7f6a47e6f78b303f9f
+	Status: Downloaded newer image for phiwamoto/hello-docker:0.0.1-SNAPSHOT
+
+	  .   ____          _            __ _ _
+	 /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+	( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+	 \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+	  '  |____| .__|_| |_|_| |_\__, | / / / /
+	 =========|_|==============|___/=/_/_/_/
+	 :: Spring Boot ::             (v2.5.0-M3)
+
+	2025-01-14 19:47:01.941  INFO 1 --- [           main] br.com.erudio.Startup                    : Starting Startup v0.0.1-SNAPSHOT using Java 16.0.2 on b36d71c9fccd with PID 1 (/app.jar started by root in /)
+	2025-01-14 19:47:01.944  INFO 1 --- [           main] br.com.erudio.Startup                    : No active profile set, falling back to default profiles: default
+	2025-01-14 19:47:02.997  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+	2025-01-14 19:47:03.012  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+	2025-01-14 19:47:03.012  INFO 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+	2025-01-14 19:47:03.078  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+	2025-01-14 19:47:03.078  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1046 ms
+	2025-01-14 19:47:03.272  INFO 1 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+	2025-01-14 19:47:03.453  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+	2025-01-14 19:47:03.463  INFO 1 --- [           main] br.com.erudio.Startup                    : Started Startup in 2.126 seconds (JVM running for 2.709)
+	
+	
+	
+	PS C:\Users\Pedro Henrique> docker run -p 80:80 -d phiwamoto/hello-docker:0.0.1-SNAPSHOT
+	ad562e8389154247f0a21608517a58ad4ac143bcb8f946dfc2bbb0cddf26ca6c
+	PS C:\Users\Pedro Henrique> docker container ls
+	CONTAINER ID   IMAGE                                   COMMAND                  CREATED          STATUS          PORTS
+	 NAMES
+	ad562e838915   phiwamoto/hello-docker:0.0.1-SNAPSHOT   "java -Djava.securit…"   30 seconds ago   Up 29 seconds   0.0.0.0:80->80/tcp   happy_goodall
+	PS C:\Users\Pedro Henrique> docker ps
+	CONTAINER ID   IMAGE                                   COMMAND                  CREATED          STATUS          PORTS
+	 NAMES
+	ad562e838915   phiwamoto/hello-docker:0.0.1-SNAPSHOT   "java -Djava.securit…"   39 seconds ago   Up 38 seconds   0.0.0.0:80->80/tcp   happy_goodall
+	PS C:\Users\Pedro Henrique>	
+	
+	- http://localhost/hello-docker
+	
+		{
+		"content": "Hello Docker",
+		"environment": "ad562e838915"
+		}	
